@@ -1,0 +1,221 @@
+/* === RESET  === */
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+ 
+*{
+    margin: 0;
+     padding: 0;
+ }
+ 
+ul[role='list'], ol[role='list']{
+    list-style: none;
+ }
+ 
+html:focus-within{
+    scroll-behavior: smooth;
+ }
+ 
+a{
+    text-decoration-skip-ink: auto;
+    text-decoration: none;
+ }
+ 
+img, picture, svg, video, canvas{
+    max-width: 100%;
+    height: auto;
+     vertical-align: middle;
+     font-style: italic;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+ 
+input, button, textarea, select{
+    font: inherit;
+ }
+ 
+@media (prefers-reduced-motion: reduce){
+     html:focus-within {
+        scroll-behavior: auto;
+     }
+     *, *::before, *::after {
+         animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition: none;
+    }
+}
+ 
+body, html{
+    height: 100%;
+     scroll-behavior: smooth;
+ }
+
+
+ /* ========================= */
+
+
+ /* Variables */
+ :root {
+    --color-yellow: #F4D04E;
+    --color-gray-950: #111111;
+    --color-gray-500: #6b6b6b;
+    --color-white: #FFFFFF;
+
+    --spacing-50: 4px;
+    --spacing-100: 8px;
+    --spacing-150: 12px;
+    --spacing-200: 24px;
+
+    --fs-text-preset-1: 24px;
+    --fs-text-preset-2: 16px;
+    --fs-text-preset-3: 14px;
+
+ }
+
+ /* Typography */
+
+ @font-face {
+    font-family: "Figtree";
+    src: url("./assets/fonts/static/Figtree-VariableFont_wght.tff");
+    font-style: normal;
+  }
+
+ @font-face {
+    font-family: "Figtree";
+    src: url("./assets/fonts/static/Figtree-Italic-VariableFont_wght");
+    font-style: italic;
+  }
+
+ .text-preset-1 {
+    font-family: "Figtree", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: var(--fs-text-preset-1);
+    line-height: 150%;
+    color: var(--color-gray-950);
+    letter-spacing: -1.5px;
+ }
+ 
+ .text-preset-2 {
+    font-family: "Figtree", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--fs-text-preset-2);
+    line-height: 150%;
+    color: var(--color-gray-500);
+ }
+
+ .text-preset-3 {
+    font-family: "Figtree", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--fs-text-preset-3);
+    line-height: 150%;
+    color: var(--color-gray-950);
+ }
+
+ .text-preset-3-bold {
+    font-family: "Figtree", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: var(--fs-text-preset-3);
+    line-height: 150%;    
+    color: var(--color-gray-950);
+ }
+
+/*  Flex */
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling */
+
+body {
+    background-color: var(--color-yellow);
+}
+
+main {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--color-white);
+    width: 384px;
+    padding: var(--spacing-200);
+    gap: var(--spacing-200);
+    border-radius: 20px;
+    border: 1px solid var(--color-gray-950);
+    box-shadow: 8px 8px 0 0 black;
+}
+
+.card-image {
+    height: 200px;
+    width: auto;
+    background-image: url(./assets/images/illustration-article.svg);    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+
+.card-text {
+    gap: var(--spacing-150);
+}
+
+.card-text .tag {
+    background-color: var(--color-yellow);
+    width: fit-content;
+    padding: var(--spacing-50) var(--spacing-150);
+    border-radius: 4px;
+}
+
+.profile {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-150);
+}
+
+.profile-img img{
+    width: 32px;
+    height: 32px;
+}
+
+h1 a:hover {
+    color: var(--color-yellow);
+    cursor: pointer;
+}
+
+/* mobile */
+
+@media (max-width: 832px) {
+    :root {
+        --fs-text-preset-1: 20px;
+        --fs-text-preset-2: 14px;
+    }
+
+    .card {
+        width: 327px;
+    }
+
+    .card-text .tag {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
